@@ -24,7 +24,7 @@
         } else {
             echo "***ERROR: object does not exist. ***<br>";
         }
-        echo "<h1>The time is " . date("h:i:sa") . "</h1>";        
+        echo "<h1>The time is " . date("h:i:sa") . "</h1>";
         $result = $factory->createLogObject( "i have been created.", $factory );
 
         echo "<br>timestamp: [" . $result[ "timestamp" ] . "]<br>";

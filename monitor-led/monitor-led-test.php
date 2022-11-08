@@ -10,7 +10,7 @@
 <body>
     <?php
     include_once "./MonitorLed.php";
-    $config =  array( 'url' => "http://americansjewelry.com" );
+    $config =  array( 'url' => "http://mycustombusinessapp.com" );
     $monitorLed = new MonitorLed( $config );
     echo "object created. <br>";
     ?>

@@ -22,7 +22,7 @@
     $object->new_id = '5';
     $object->table  = 'monitored_objects';
     echo "object created. <br>";
-    // $object = json_decode( '{"property": {"foo": "bar"}, "hello": "world"}'); 
+    // $object = json_decode( '{"property": {"foo": "bar"}, "hello": "world"}');
     // $config = json_decode( '{"new_id": "5", "table: "monitored_object"}');
     echo "before calling monitored object constructor... <br>";
     $monitoredObject = new MonitoredObject( $object );

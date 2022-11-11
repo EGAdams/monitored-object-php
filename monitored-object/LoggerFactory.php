@@ -12,6 +12,10 @@ class IncRunQueryMonitor extends MonitoredObject {
 class GetStatusMonitor extends MonitoredObject {
     public function __construct( $config ) { parent::__construct( $config );}}
 
+class AdminAjaxMonitor extends MonitoredObject {
+    public function __construct($config  ) { parent::__construct( $config );}}
+    
+
 class LoggerFactory {
     public static function getLogger( $objectName ) {
         
@@ -32,6 +36,12 @@ class LoggerFactory {
             $monitor_configuration_object->new_id = '2022';
             $monitor_configuration_object->table = 'monitored_objects';
             return new GetStatusMonitor( $monitor_configuration_object );
+
+        } elseif ( $objectName == "AdminAjaxMonitor" ) {
+            $monitor_configuration_object = new stdClass();
+            $monitor_configuration_object->new_id = '2022';
+            $monitor_configuration_object->table = 'monitored_objects';
+            return new AdminAjaxMonitor( $monitor_configuration_object );
 
         } else { return new Error( $objectName ); }}
 }

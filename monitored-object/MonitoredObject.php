@@ -9,11 +9,10 @@ class MonitoredObject {
     public function __construct( $config ) {
         $this->logObjects       = array();
         $this->object_view_id   = get_class( $this ) . "_" . $config->new_id;
-        $this->objectUpdater    = new ObjectModel( $config->table );
-        $objectInserter         = new ObjectModel( $config->table );
+        $this->objectModel      = new ObjectModel( $config->table );
         $this->logObjectFactory = new LogObjectFactory(           );
         $this->monitorLed       = new MonitorLed( $config         );
-        $objectInserter->insertObject( $this->object_view_id, json_encode( $this )); }
+        $this->objectModel->insertObject( $this->object_view_id, json_encode( $this )); }
 
     public function logUpdate( $message ) {
         if ( !$this->object_view_id ) { FileLogger::writeLog( __METHOD__, "*** ERROR: object needs an id to log. ***" ); return; }
@@ -22,7 +21,7 @@ class MonitoredObject {
                                                  $this->monitorLed->setLedText( $message ); }
         $logObject = $this->logObjectFactory->createLogObject( $message, $this );
         array_push( $this->logObjects, $logObject );
-        $this->objectUpdater->updateObject( $this->object_view_id, json_encode( $this ));
+        $this->objectModel->updateObject( $this->object_view_id, json_encode( $this ));
     }
     
     public function getMonitorLed()   { return $this->monitorLed;     }

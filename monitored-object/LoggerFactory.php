@@ -1,10 +1,12 @@
 <?php
-require_once( ABSPATH . "wp-content/plugins/MCBA-Wordpress/monitored-object-php/monitored-object/MonitoredObject.php" );
+require_once( "MonitoredObject.php" );
 class DoActionMonitor    extends MonitoredObject { public function __construct( $config ) { parent::__construct( $config );}}
 class IncRunQueryMonitor extends MonitoredObject { public function __construct( $config ) { parent::__construct( $config );}}
 class GetStatusMonitor   extends MonitoredObject { public function __construct( $config ) { parent::__construct( $config );}}
 class AdminAjaxMonitor   extends MonitoredObject { public function __construct( $config ) { parent::__construct( $config );}}
 class McbaStartupMonitor extends MonitoredObject { public function __construct( $config ) { parent::__construct( $config );}}
+class ChatMessageInput   extends MonitoredObject { public function __construct( $config ) { parent::__construct( $config );}}
+class McbaChatLogger     extends MonitoredObject { public function __construct( $config ) { parent::__construct( $config );}}
 
 class GenericLogger {
     public function __construct( $objectName ) { $this->objectName = $objectName; }
@@ -21,7 +23,5 @@ class LoggerFactory {
         } catch( Exception $e ) {
             $logger = new GenericLogger( $objectName );
             $logger->logUpdate( $e->getMessage()); }
-            
         return $logger; }
-}
-?>
+} ?>

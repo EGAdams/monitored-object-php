@@ -7,8 +7,15 @@ require_once( dirname( __DIR__, 1 ) . "/local-php-api/FileLogger.php"           
 /** @class MonitoredObject */
 class MonitoredObject {
     public function __construct( $config ) {
+        if ( !is_object( $config )) {
+            FileLogger::writeLog( __METHOD__, "*** ERROR: can not construct, no configuration. ***" );
+            die();
+        } else {
+            FileLogger::writeLog( __METHOD__, "new_id: " . $config->new_id );
+        }
         $this->logObjects       = array();
         $this->object_view_id   = get_class( $this ) . "_" . $config->new_id;
+        FileLogger::writeLog( __METHOD__, "inside MonitoredObject constructing " . $this->object_view_id . " ..." );
         $this->objectModel      = new ObjectModel( $config->table );
         $this->logObjectFactory = new LogObjectFactory(           );
         $this->monitorLed       = new MonitorLed( $config         );

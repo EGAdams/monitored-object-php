@@ -10,6 +10,7 @@ class ChatMessageInput       extends MonitoredObject { public function __constru
 class McbaChatMessageLog     extends MonitoredObject { public function __construct( $config ) { parent::__construct( $config );}}
 class SendMessageLog         extends MonitoredObject { public function __construct( $config ) { parent::__construct( $config );}}
 class MessageManagerLog      extends MonitoredObject { public function __construct( $config ) { parent::__construct( $config );}}
+class IncrementLogger        extends MonitoredObject { public function __construct( $config ) { parent::__construct( $config );}}
 
 class GenericLogger {
     public function __construct( $objectName ) { $this->objectName = $objectName; }

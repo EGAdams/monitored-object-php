@@ -20,6 +20,7 @@ class GetLocationStatus      extends MonitoredObject { public function __constru
 class UpdateLocationStatus   extends MonitoredObject { public function __construct( $config ) { parent::__construct( $config );}}
 class GetRewardsLogger       extends MonitoredObject { public function __construct( $config ) { parent::__construct( $config );}}
 class GetRewardsAjax		 extends MonitoredObject { public function __construct( $config ) { parent::__construct( $config );}}
+class CreateRewardCodes		 extends MonitoredObject { public function __construct( $config ) { parent::__construct( $config );}}
 class GenericLogger {
 	private $objectName;
     public function __construct( $objectName ) { $this->objectName = $objectName; }

@@ -2,6 +2,7 @@
 require_once dirname(__DIR__, 1) . "/monitor-led-class-object/MonitorLedClassObject.php";
 /** @class MonitorLed */
 class MonitorLed {
+    private $config, $classObject, $ledText, $RUNNING_COLOR, $PASS_COLOR, $FAIL_COLOR;
 	public function __construct($configArg) {
 		$this->config = $configArg;
 		$this->classObject = new MonitorLedClassObject();

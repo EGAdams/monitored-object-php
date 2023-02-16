@@ -23,6 +23,15 @@ class SetRewardsLogger       extends MonitoredObject { public function __constru
 class GetRewardsAjax		 extends MonitoredObject { public function __construct( $config ) { parent::__construct( $config );}}
 class CreateRewardCodes		 extends MonitoredObject { public function __construct( $config ) { parent::__construct( $config );}}
 class MasterRewardsObject	 extends MonitoredObject { public function __construct( $config ) { parent::__construct( $config );}}
+class MCBAFirebaseLogger	 extends MonitoredObject { public function __construct( $config ) { parent::__construct( $config );}}
+class GetAdminTokenLogger	 extends MonitoredObject { public function __construct( $config ) { parent::__construct( $config );}}
+class CreateConversationLogger	          extends MonitoredObject { public function __construct( $config ) { parent::__construct( $config );}}
+class IncrementAdminUnreadLogger          extends MonitoredObject { public function __construct( $config ) { parent::__construct( $config );}}
+class GetConversationListForAdminLogger	  extends MonitoredObject { public function __construct( $config ) { parent::__construct( $config );}}
+class GetConversationIdFromDatabaseLogger extends MonitoredObject { public function __construct( $config ) { parent::__construct( $config );}}
+class GetUserEmailFromDatabaseLogger      extends MonitoredObject { public function __construct( $config ) { parent::__construct( $config );}}
+class GetRecipientTokenLogger             extends MonitoredObject { public function __construct( $config ) { parent::__construct( $config );}}
+
 class GenericLogger {
 	private $objectName;
     public function __construct( $objectName ) { $this->objectName = $objectName; }
